@@ -1,0 +1,40 @@
+<!--pages/movies/show.wxml-->
+<view class="container">
+  <block wx:for="{{movies}}" wx:key="{{item}}">
+  <view class="list">
+    <!-- 海报 -->
+    <view class="list_img">
+      <image src="{{item.images.mediun}}"></image>
+    </view>
+
+    <view class="list_info">
+      <!-- 片名 -->
+      <view class="list_title">
+        <text class="sub_title">片名：</text>
+        <text class="msg">{{item.title}}\n</text>
+      </view>
+      <!-- 主演 -->
+      <view class="list_actors">
+        <text class="sub_title">主演：</text>
+        <block wx:for="{{item.casts}}" wx:key="{{index}}">
+          <text class="msg">{{item.name}}</text>
+        </block>
+      </view>
+      <!-- 导演 -->
+      <view class="list_directors">
+        <text class="sub_title">导演：</text>
+        <block wx:for="{{item.directors}}" wx:key="{{index}}">
+          <text class="msg">{{item.name}}</text>
+        </block>
+      </view>
+      <!-- 类型 -->
+      <view class="style">
+        <text class="sub_title">类型：</text>
+        <block wx:for="{{item.genres}}" wx:key="{{index}}">
+          <text class="msg">{{item}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+  </block>
+</view>
